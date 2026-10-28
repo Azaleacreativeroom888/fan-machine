@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>機械の勉強室 | MECHANICAL LAB</title>
+<style>
+:root{
+  --main:#5f9ea0;
+  --accent:#00ffff;
+  --red:#e60033;
+  --dark:#1f3b3c;
+  --light:#eefafa;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+  color:var(--dark);
+  background:
+    linear-gradient(var(--light) 1px,transparent 1px) 0 0/32px 32px,
+    linear-gradient(90deg,var(--light) 1px,transparent 1px) 0 0/32px 32px,
+    #fff;
+  line-height:1.8;
+}
+header{
+  background:var(--main);
+  border-bottom:6px solid var(--accent);
+  padding:14px 20px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.logo{color:#fff;font-weight:bold;font-size:1.3rem;letter-spacing:.12em}
+.logo span{color:var(--accent)}
+header{box-shadow:0 4px 0 var(--red)}
+nav a{
+  color:#fff;text-decoration:none;margin-left:16px;font-size:.95rem;
+  padding-bottom:2px;border-bottom:2px solid transparent;
+}
+nav a:hover,nav a.now{border-bottom-color:var(--red)}
+.hero{
+  text-align:center;
+  padding:70px 20px 60px;
+  background:linear-gradient(135deg,var(--main) 0%,var(--accent) 100%);
+  color:#fff;
+}
+.gear{
+  width:90px;height:90px;margin:0 auto 18px;
+  border:14px dotted #fff;border-radius:50%;
+  position:relative;animation:spin 12s linear infinite;
+}
+.gear::before{
+  content:"";position:absolute;width:16px;height:16px;
+  background:var(--red);border-radius:50%;
+  top:50%;left:50%;margin:-8px 0 0 -8px;z-index:1;
+}
+.gear::after{
+  content:"";position:absolute;inset:14px;
+  border:6px solid #fff;border-radius:50%;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero h1{font-size:2rem;letter-spacing:.15em;text-shadow:2px 2px 0 var(--main)}
+.hero p{margin-top:10px;font-size:1rem}
+main{max-width:860px;margin:0 auto;padding:40px 20px}
+h2{
+  font-size:1.2rem;color:var(--dark);
+  border-left:10px solid var(--red);
+  border-bottom:2px solid var(--accent);
+  background:var(--light);
+  padding:6px 14px;margin-bottom:18px;
+}
+section{margin-bottom:44px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.card{
+  display:block;text-decoration:none;color:var(--dark);
+  background:#fff;border:3px solid var(--main);
+  border-radius:6px;padding:18px;
+  box-shadow:5px 5px 0 var(--accent);
+  transition:transform .15s;
+}
+.card:hover{transform:translate(-2px,-2px)}
+.card b{display:block;color:var(--red);font-size:1.05rem;margin-bottom:4px}
+.card small{font-size:.85rem}
+.topics{list-style:none}
+.topics li{
+  padding:8px 4px;border-bottom:2px dashed var(--main);
+}
+.topics li::before{content:"⚙ ";color:var(--red)}
+footer{
+  background:var(--main);color:#fff;text-align:center;
+  padding:16px;border-top:6px solid var(--red);font-size:.85rem;
+}
+@media(max-width:560px){
+  nav a{margin:0 12px 0 0}
+  .hero h1{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MECHANICAL <span>LAB</span></div>
+  <nav>
+    <a href="index.html" class="now">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="gear"></div>
+  <h1>機械の勉強室</h1>
+  <p>歯車のしくみから、動くものの不思議まで。ゆっくり学んでいます。</p>
+</div>
+
+<main>
+  <section>
+    <h2>ようこそ</h2>
+    <p>
+      機械について勉強したことをまとめるサイトです。
+      勉強の進捗はブログに、描いた漫画やイラストはギャラリーに置いています。
+      気になるページからのんびり見ていってください。
+    </p>
+  </section>
+
+  <section>
+    <h2>メニュー</h2>
+    <div class="cards">
+      <a class="card" href="blog.html"><b>Blog</b><small>勉強の進捗を日記風に記録</small></a>
+      <a class="card" href="gallery.html"><b>Gallery</b><small>漫画やイラストの展示</small></a>
+      <a class="card" href="about.html"><b>About</b><small>このサイトについて</small></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>お知らせ</h2>
+    <ul class="topics">
+      <li>サイトを公開しました。</li>
+      <li>ブログとギャラリーは準備中です。</li>
+    </ul>
+  </section>
+</main>
+
+<footer>&copy; MECHANICAL LAB</footer>
+
+</body>
+</html>
